@@ -27,45 +27,45 @@ h4 {
 
 /* The Apply to help form */
 
-.Apply ul {
-    width: 750px;
-    list-style: none outside;
+.Apply {
     margin: 0px;
+    max-width: 640px;
     padding: 0px;
+    width: 100%;
 }
 
-.Apply li {
-    padding: 12px 12px 12px 0;
+.Apply p, h2 {
     border-bottom: 1px solid #eee;
     position: relative;
-}
-
-.Apply li:first-child, .Apply li:last-child {
-    border-bottom: 1px solid #777;
+    width: 100%;
 }
 
 .Apply h2 {
-    margin: 0;
     display: inline;
+    margin: 0;
+}
+
+.Apply p {
+    display: block;
 }
 
 .Apply label {
-    width: 150px;
+    display: block;
     margin-top: 3px;
-    display: inline-block;
-    float: left;
     padding: 3px;
+    width: 94%;
 }
 
 .Apply input {
+    display: block;
     height: 20px;
-    width: 220px;
     padding: 5px 8px;
+    width: 100%;
 }
 
 .Apply textarea {
     padding: 8px;
-    width: 300px;
+    width: 100%;
     min-height: 100px;
 }
 
@@ -73,4 +73,5 @@ h4 {
     color: red;
     font-style: italic;
     font-weight: bolder;
+    width: 100%;
 }

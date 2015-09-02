@@ -19,13 +19,15 @@ window.onload = function () {
 			e.preventDefault();
 		}
 		// validate inputs. Browser may do this for us, but it might not.
-		if (application.name === null || application.name === undefined || application.length === 0) {
+		if (application.name === null || application.name === undefined || application.name.length === 0) {
 			formInError = setFormFieldError('name-error', 'Please enter your name');
 		}
-		if (application.skills === null || application.skills === undefined || application.skills === 0) {
+		if (application.skills === null || application.skills === undefined || application.skills.length === 0) {
 			formInError = setFormFieldError('skills-error', 'Please enter your skills');
 		}
-		if (application.email === null || application.email === undefined || application.email === 0 || !validateEmail(application.email)) {
+		if (application.email === null || application.email === undefined || application.email.length === 0) {
+			formInError = setFormFieldError('email-error', 'Please enter your email');
+		} else if (!validateEmail(application.email)){
 			formInError = setFormFieldError('email-error', 'Please enter a valid email');
 		}
 		if (!formInError) {
