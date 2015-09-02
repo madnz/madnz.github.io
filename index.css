@@ -1,8 +1,8 @@
 body {
+    color: #222;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 16px;
     line-height: 22px;
-    color: #222;
 }
 
 a {
@@ -68,11 +68,12 @@ h4 {
 }
 
 .Apply textarea {
+    min-height: 100px;
     padding: 8px;
     width: 100%;
-    min-height: 100px;
 }
 
+/* Only shown if validation is done by index.js instead of by browser */
 .Apply-formError {
     color: red;
     font-style: italic;
