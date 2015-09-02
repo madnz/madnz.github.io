@@ -25,3 +25,46 @@ h4 {
     font-size: 16px;
 }
 
+/* The Apply to help form */
+
+.Apply ul {
+    width: 750px;
+    list-style: none outside;
+    margin: 0px;
+    padding: 0px;
+}
+
+.Apply li {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+.Apply li:first-child, .Apply li:last-child {
+    border-bottom: 1px solid #777;
+}
+
+.Apply h2 {
+    margin: 0;
+    display: inline;
+}
+
+.Apply label {
+    width: 150px;
+    margin-top: 3px;
+    display: inline-block;
+    float: left;
+    padding: 3px;
+}
+
+.Apply input {
+    height: 20px;
+    width: 220px;
+    padding: 5px 8px;
+}
+
+.Apply textarea {
+    padding: 8px;
+    width: 300px;
+    min-height: 100px;
+}
