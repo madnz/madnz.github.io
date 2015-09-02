@@ -1,6 +1,5 @@
 "use strict";
 
-var formInError = false;
 
 window.onload = function () {
 	document.getElementById('applyForm').onsubmit = function (e) {
@@ -14,19 +13,20 @@ window.onload = function () {
 				"email": applicantEmail,
 				"skills": applicantSkills
 			},
-			applicationRef;
+			applicationRef,
+			formInError = false;
 		if (e.preventDefault) {
 			e.preventDefault();
 		}
 		// validate inputs. Browser may do this for us, but it might not.
 		if (application.name === null || application.name === undefined || application.length === 0) {
-			setFormFieldError('name-error', 'Please enter your name');
+			formInError = setFormFieldError('name-error', 'Please enter your name');
 		}
 		if (application.skills === null || application.skills === undefined || application.skills === 0) {
-			setFormFieldError('skills-error', 'Please enter your skills');
+			formInError = setFormFieldError('skills-error', 'Please enter your skills');
 		}
 		if (application.email === null || application.email === undefined || application.email === 0 || !validateEmail(application.email)) {
-			setFormFieldError('email-error', 'Please enter a valid email');
+			formInError = setFormFieldError('email-error', 'Please enter a valid email');
 		}
 		if (!formInError) {
 			// saves this volunteer application as a new unique entry in the volunteers list on Firebase
@@ -44,7 +44,7 @@ window.onload = function () {
 
 function setFormFieldError(fieldId, error) {
 	document.getElementById(fieldId).innerHTML = error;
-	formInError = true;
+	return true;
 }
 
 // see http://output.jsbin.com/ozeyag/19
