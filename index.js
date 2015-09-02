@@ -27,16 +27,14 @@ window.onload = function () {
 		}
 		if (application.email === null || application.email === undefined || application.email.length === 0) {
 			formInError = setFormFieldError('email-error', 'Please enter your email');
-		} else if (!validateEmail(application.email)){
+		} else if (!validateEmail(application.email)) {
 			formInError = setFormFieldError('email-error', 'Please enter a valid email');
 		}
 		if (!formInError) {
 			// saves this volunteer application as a new unique entry in the volunteers list on Firebase
 			applicationRef = firebase.child('volunteers').push(application);
-
-			alert('Application saved with key: ' + applicationRef.key());
-
-			//TODO redirect to thank-you.html
+			//alert('Application saved with key: ' + applicationRef.key());
+			window.location = 'thank-you.html?key='+ encodeURI(applicationRef.key()) +'&name='+encodeURI(application.name);
 		}
 
 		// prevent form default behaviour
