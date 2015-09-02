@@ -34,15 +34,18 @@
         <li>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required placeholder="Add your full name" autocomplete="name">
+            <span id="name-error" class="Apply-formError"></span>
         </li>
         <li>
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required placeholder="Add your email address" autocomplete="email">
+            <span id="email-error" class="Apply-formError"></span>
         </li>
         <li>
             <label for="skills"></label>
             <textarea id="skills" name="skills" required
                       placeholder="Can you please write a sentence or two about your applicable skills and feel free to add any initial questions you might have..."></textarea>
+            <span id="skills-error" class="Apply-formError"></span>
         </li>
         <li>
             <input type="submit" value="Apply">

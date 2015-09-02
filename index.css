@@ -68,3 +68,9 @@ h4 {
     width: 300px;
     min-height: 100px;
 }
+
+.Apply-formError {
+    color: red;
+    font-style: italic;
+    font-weight: bolder;
+}
