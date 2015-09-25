@@ -2,7 +2,7 @@ var Sendgrid = require("sendgrid-web");
 console.log('sending sample mail');
 var sendgrid = new Sendgrid({
     user: "madnz",
-    key: "PASSWORD"
+    key: "2015cfgmad"
 });
 
 sendgrid.send({
