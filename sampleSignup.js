@@ -2,11 +2,12 @@ var Sendgrid = require("sendgrid-web");
 
 var sendgrid = new Sendgrid({
     user: "madnz",
-    key: "PASSWORD"
+    key: ""
 });
 
 sendgrid.send({
-    to: 'adrian@iceknife.com',
+    to: 'adrian.g.parker@gmail.com',
+    name: 'Adrian',
     from: 'madnz@iceknife.com',
     subject: 'Hello world!',
     html: '<h1>Hello world!</h1>'
