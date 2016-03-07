@@ -36,8 +36,9 @@ window.onload = function () {
 			volunteersRef = firebase.child('volunteers');
             var newVolunteer = volunteersRef.push();
             newVolunteer.set(application);
-            console.log(newVolunteer.key());
-//			window.location = 'thank-you.html?key='+ encodeURI(newVolunteer.key()) +'&name='+encodeURI(application.name);
+            var newVolunteerKey =newVolunteer.key();
+            console.log(newVolunteerKey);
+			window.location = 'thank-you.html?key='+ encodeURI(newVolunteerKey) +'&name='+encodeURI(application.name);
 		}
 
 		// prevent form default behaviour
