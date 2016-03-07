@@ -13,7 +13,7 @@ window.onload = function () {
 				"email": applicantEmail,
 				"skills": applicantSkills
 			},
-			applicationRef,
+            volunteersRef,
 			formInError = false;
 		if (e.preventDefault) {
 			e.preventDefault();
@@ -32,8 +32,10 @@ window.onload = function () {
 		}
 		if (!formInError) {
 			// saves this volunteer application as a new unique entry in the volunteers list on Firebase
-			applicationRef = firebase.child('volunteers').push(application);
-			//alert('Application saved with key: ' + applicationRef.key());
+            console.log(application);
+			volunteersRef = firebase.child('volunteers');
+            var newVolunteer = volunteersRef.push();
+            newVolunteer.set(application);
 			window.location = 'thank-you.html?key='+ encodeURI(applicationRef.key()) +'&name='+encodeURI(application.name);
 		}
 
