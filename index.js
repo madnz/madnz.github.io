@@ -32,13 +32,17 @@ window.onload = function () {
 		}
 		if (!formInError) {
 			// saves this volunteer application as a new unique entry in the volunteers list on Firebase
-            console.log(application);
 			volunteersRef = firebase.child('volunteers');
             var newVolunteer = volunteersRef.push();
-            newVolunteer.set(application);
-            var newVolunteerKey =newVolunteer.key();
-            console.log(newVolunteerKey);
-			window.location = 'thank-you.html?key='+ encodeURI(newVolunteerKey) +'&name='+encodeURI(application.name);
+            newVolunteer.set(application, function(error) {
+                if (error) {
+                    console.log("New volunteer data could not be saved: "  + error);
+                } else {
+                    var newVolunteerKey =newVolunteer.key();
+                    console.log(newVolunteerKey);
+                    window.location = 'thank-you.html?key='+ encodeURI(newVolunteerKey) +'&name='+encodeURI(application.name);
+                }
+            });
 		}
 
 		// prevent form default behaviour
