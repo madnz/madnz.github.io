@@ -39,9 +39,9 @@ window.onload = function () {
             newVolunteer.set(application, function (error) {
                 if (error) {
                     console.log("New volunteer data could not be saved: " + error);
+                    //TODO notify user of form submit faiure
                 } else {
                     newVolunteerKey = newVolunteer.key();
-                    //console.log(newVolunteerKey);
                     window.location = 'thank-you.html?key=' + encodeURI(newVolunteerKey) + '&name=' + encodeURI(application.name);
                 }
             });
