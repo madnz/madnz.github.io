@@ -39,7 +39,7 @@ window.onload = function () {
             newVolunteer.set(application, function (error) {
                 if (error) {
                     console.log("New volunteer data could not be saved: " + error);
-                    //TODO notify user of form submit faiure
+                    //TODO notify user of form submit failure
                 } else {
                     newVolunteerKey = newVolunteer.key();
                     window.location = 'thank-you.html?key=' + encodeURI(newVolunteerKey) + '&name=' + encodeURI(application.name);
