@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
-    <title>Thank you from Make A Difference</title>
+    <title>Volunteering opportunities via Make A Difference</title>
     <link rel="stylesheet" media="screen" href="index.css" type="text/css">
 </head>
 <body>
@@ -12,23 +12,18 @@
 </div>
 <img class="Hero" border="0" src="img/Home-Office-lower.jpeg" width="2263" height="939" alt="Study materials on desk">
 
-<h1 class="Company-name">Thank you</h1>
+<h1 class="Company-name">Good causes need your skills</h1>
 
 <div class="Body-container">
 
-    <p>
-        Thank you for your interest, <span id="ThankYou-name"></span>.
-        <br>
-        Your application has been saved<!-- with key <span id="ThankYou-key"></span>-->.
-        <br><br>
-        Make A Difference will be in touch soon. In the meantime, why not browse our current <a
-            href="volunteering-opportunities.html">volunteering opportunities</a> or you can return <a href="/">home</a>.
-    </p>
-</div>
-<br>
-<br>
+    <ul id="vacancies">
+        <li><em>Loading current opportunities...</em></li>
+    </ul>
 
-<script src="thank-you.js"></script>
+</div>
+
+<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+<script src="index.js"></script>
 <script type="text/javascript">
 
     var _gaq = _gaq || [];

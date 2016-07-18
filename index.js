@@ -5,21 +5,26 @@ var firebase = new Firebase('https://scorching-fire-2466.firebaseIO.com/');
 
 function appendVacancy(text) {
     var li = document.createElement('li');
-    li.innerHTML = text;;
+    li.innerHTML = text;
+    ;
     document.getElementById('vacancies').appendChild(li);
 }
 
 window.onload = function () {
-    document.getElementById('applyForm').onsubmit = apply;
-    var projectsRef = firebase.child('projects');
-    projectsRef.on("value", function (snapshot) {
-        document.getElementById('vacancies').innerHTML = '';
-        if (snapshot.hasChildren()) {
-            snapshot.forEach(generateVacancyLI);
-        } else {
-            appendVacancy('<h4>Sorry no vacancies are available</h4>');
-        }
-    });
+    if (document.getElementById('applyForm')) {
+        document.getElementById('applyForm').onsubmit = apply;
+    }
+    if (document.getElementById('vacancies')) {
+        var projectsRef = firebase.child('projects');
+        projectsRef.on("value", function (snapshot) {
+            document.getElementById('vacancies').innerHTML = '';
+            if (snapshot.hasChildren()) {
+                snapshot.forEach(generateVacancyLI);
+            } else {
+                appendVacancy('<h4>Sorry no vacancies are available</h4>');
+            }
+        });
+    }
 }
 
 function generateVacancyLI(vacancy) {
