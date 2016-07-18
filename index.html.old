@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
+    <title>Make A Difference</title>
+    <link rel="stylesheet" media="screen" href="index.css" type="text/css">
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="what-we-do.html">What We Do</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
+    </ul>
+</nav>
+<h3>Making A Difference.</h3>
+
+<h1>Good causes need your skills</h1>
+
+<ul id="vacancies" style="list-style: none;">
+    <li><em>Loading current vacancies...</em></li>
+</ul>
+
+<form class="Apply" id="applyForm">
+    <h2>Apply to help</h2>
+
+    <p>
+        <label for="nameInput">Name:
+            <input type="text" id="nameInput" name="name" required placeholder="Add your full name"
+                   autocomplete="on">
+        </label>
+        <span id="name-error" class="Apply-formError"></span>
+    </p>
+
+    <p>
+        <label for="emailInput">Email:
+            <input type="email" id="emailInput" name="email" required placeholder="Add your email address"
+                   autocomplete="on">
+        </label>
+        <span id="email-error" class="Apply-formError"></span>
+    </p>
+
+    <p>
+        <label for="skillsInput">Skills:
+            <textarea id="skillsInput" name="skills" required
+                      placeholder="Can you please write a sentence or two about your applicable skills and feel free to add any initial questions you might have..."></textarea>
+        </label>
+        <span id="skills-error" class="Apply-formError"></span>
+    </p>
+
+    <p>
+        <input type="submit" value="Apply">
+    </p>
+
+</form>
+<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

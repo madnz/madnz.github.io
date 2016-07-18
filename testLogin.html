@@ -4,12 +4,34 @@
     <title></title>
 </head>
 <body>
-
-<button id="loginButton">Login</button>
-
 <h4>Welcome&nbsp;<span id="welcomeName"></span></h4>
-
+<button id="loginButton">Login</button>
+<p style="display: none" id="loginInfo">Your role is currently: <span id="role"></span> and your last login was
+    <span id="lastLogin"></span> UTC.
+    <br/>
+    <button style="visibility: hidden" id="volunteersAdminButton">Volunteers Admin</button>
+    <button style="visibility: hidden" id="projectAdminButton">Project Admin</button>
+</p>
+<div id="workArea"></div>
+<form id="projectForm" style="display: none">
+    <label style="min-width: 200px; display: inline-block;" for="organisationName">Organisation Name</label>
+    <input id="organisationName" type="text" width="200px"/><br/>
+    <label style="min-width: 200px; display: inline-block;"for="organisationType">Organisation Type</label>
+    <input id="organisationType" type="text" width="200px"/><br/>
+    <label style="min-width: 200px; display: inline-block;"for="vacancyName">Vacancy Name</label>
+    <input id="vacancyName" type="text" width="200px"/><br/>
+    <label style="min-width: 200px; display: inline-block;"for="vacancyDates">Vacancy Dates</label>
+    <input id="vacancyDates" type="text" width="200px"/><br/>
+    <label style="min-width: 200px; display: inline-block;"for="vacancyLocations">Vacancy Locations</label>
+    <input id="vacancyLocations" type="text" width="200px"/><br/>
+    <label style="min-width: 200px; display: inline-block;"for="vacancySkills">Vacancy Skills</label>
+    <input id="vacancySkills" type="text"width="200px"/><br/>
+    <label style="min-width: 200px; display: inline-block;"for="vacancyDescription">Vacancy Description</label>
+    <textarea form="projectForm" id="vacancyDescription" type="text" rows="10" width="200px"></textarea><br/>
+    <button  onclick="createProject();">Save</button><button  onclick="projects();">Cancel</button>
+</form>
 <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 <script src="testLogin.js"></script>
+<script src="excellentexport/excellentexport.min.js"></script>
 </body>
 </html>

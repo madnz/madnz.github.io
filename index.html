@@ -7,24 +7,58 @@
     <link rel="stylesheet" media="screen" href="index.css" type="text/css">
 </head>
 <body>
-<nav>
-    <ul>
-        <li><a href="what-we-do.html">What We Do</a></li>
-        <li><a href="contact-us.html">Contact Us</a></li>
-    </ul>
-</nav>
-<h1>Making A Difference.</h1>
+<div class="Logo">
+    <a href="/"><img border="0" src="img/madskillslogo.png" width="233px" height="154px" alt="Mad Skills logo"></a>
+</div>
+<img class="Hero" border="0" src="img/Home-Office-lower.jpeg" width="2263" height="939" alt="Study materials on desk">
 
-<h2>Local causes need you and your professional skills</h2>
+<h1 class="Company-name">MAKING A DIFFERENCE SKILLS LIMITED</h1>
 
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie faucibus justo in varius. Integer varius
-    ipsum vel risus volutpat eleifend. Duis sed dui placerat diam semper dignissim eu at metus. Mauris quam tortor,
-    rutrum at rutrum sed, fermentum sed purus. Aenean malesuada ipsum ut nulla tempus, ac convallis metus dapibus. Sed
-    dictum diam at velit lacinia aliquam. Nullam lectus risus, consequat eu ligula consectetur, tincidunt faucibus
-    metus. Vivamus dolor risus, congue ut massa a, consequat venenatis nulla. Praesent consequat ex non diam suscipit
-    tincidunt.
-</p>
+<div class="Col-container">
+    <div id="Advice" class="col"><h2>Advice for your business</h2>
+
+        <p>
+            Whether you are just starting out or have been established for a while, a fresh set of eyes always brings a
+            different perspective. It is easy to get stuck into the day to day of managing your business or charity. The
+            hard part is extracting yourself to work on how you will grow your organisation or improve the way the
+            organisation works. Starting from your vision and mission we help you define what your current state is,
+            where you would like to be and what barriers may be standing in the way of your ultimate success. Working
+            together we can form a plan that can help you overcome your barriers to meet your immediate and future
+            goals.
+        </p></div>
+    <div id="Training" class="col"><h2>Training and Facilitation</h2>
+
+        <p>
+            We take the time to listen to the needs for your business or charity and create customised training sessions
+            to help you and your staff upskill. Our trained facilitator has over 10 years of experience in working with
+            people of all ages and diverse backgrounds and loves nothing more than creating a safe and constructive
+            learning environment. Whether you are looking to upskill in how to use social media or need a refresher in
+            how to market your product or services we can tailor the session to your organisation's requirements. We can
+            deliver the training on your premises making it easily accessible to you and your staff.
+        </p></div>
+    <div id="Volunteers" class="col"><h2>Skilled Volunteers</h2>
+
+        <p>
+            For community organisations and charities who have already invested in our services we can help you further
+            by pairing you with skilled volunteers. Our skilled volunteers have experience and expertise to help you to
+            deliver on your strategic goals. The skilled volunteer pairing is a complimentary service for our charity
+            partners as we are passionate about helping you succeed in your mission to make a difference.
+        </p>
+
+        <p>
+            <a href="volunteer.html">Become a volunteer</a><br><br>
+            <a href="volunteering-opportunities.html">Browse volunteering opportunities</a><br>
+        </p>
+    </div>
+</div>
+
+<div style="clear: both"></div>
+<!--
+<h2>Good causes need your skills</h2>
+
+<ul id="vacancies">
+    <li><em>Loading current vacancies...</em></li>
+</ul>
 
 <form class="Apply" id="applyForm">
     <h2>Apply to help</h2>
@@ -58,7 +92,49 @@
     </p>
 
 </form>
+-->
+<div class="Social-container">
+    <h3>
+        We'd love to hear from you! You can find us here:
+    </h3>
+    <table>
+        <tr>
+            <td class="Social">Telephone: 021 207 9530</td>
+            <td class="Social">Email: <a href="mailto:shiffy@madskills.nz">shiffy@madskills.nz</a></td>
+            <td class="Social">Facebook: ???</td>
+            <td class="Social">Twitter: <a href="https://twitter.com/madskillsnz" target="_blank">@madskillsnz</a></td>
+        </tr>
+    </table>
+    <br>
+    <br>
+</div>
+
+<footer class="Footer">
+    Photos used under Creative Commons from <a href="http://www.flickr.com/photos/133488379@N08/26585647192"
+                                               target="_blank">BarnImages.com</a>, <a
+        href="http://www.flickr.com/photos/128901266@N05/18179585278" target="_blank">USEmbassyPhnomPenh</a>, <a
+        href="http://www.flickr.com/photos/10710442@N08/3990957354" target="_blank">Steve Snodgrass</a>
+</footer>
+
 <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 <script src="index.js"></script>
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-7870337-1']);
+    _gaq.push(['_setDomainName', 'none']);
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
 </body>
 </html>
