@@ -23,7 +23,7 @@ function volunteers() {
     var volunteersRef = firebase.child('volunteers');
     volunteersRef.on("value", function (snapshot) {
         if (snapshot.hasChildren()) {
-            volunteerTable = '<table id="volunteerTable"><thead><tr><th>Name</th><th>Email</th><th>Skills</th></tr></thead><tbody>';
+            volunteerTable = '<table id="volunteerTable"><thead><tr><th>Name</th><th>Email</th><th>Skills</th><th></th></tr></thead><tbody>';
             snapshot.forEach(generateVolunteerHTML);
             volunteerTable += '</tbody></table>';
             // add link for exporting to csv
@@ -39,7 +39,7 @@ function volunteers() {
 
 function generateVolunteerHTML(volunteer) {
     var volunteerObj = volunteer.val();
-    volunteerTable += '<tr><td>' + volunteerObj.name + '</td><td>' + volunteerObj.email + '</td><td>' + volunteerObj.skills + '</td></tr>';
+    volunteerTable += '<tr><td>' + volunteerObj.name + '</td><td>' + volunteerObj.email + '</td><td>' + volunteerObj.skills + '</td><td><button onclick="deleteVolunteer(\''+volunteer.key()+'\');">Delete</button></td></tr>';
 }
 
 function generateProjectHTML(project) {
@@ -47,9 +47,15 @@ function generateProjectHTML(project) {
     var projectObj = project.val();
     projectTable += '<tr><td>' + projectObj.organisationName + '</td><td>' + projectObj.organisationType + '</td><td>' + projectObj.vacancyDates + '</td><td>' + projectObj.vacancyName + '</td><td>' + projectObj.vacancyDescription + '</td><td>' + projectObj.vacancyLocations + '</td><td>' + projectObj.vacancySkills + '</td><td><button onclick="deleteProject(\''+project.key()+'\');">Delete</button></td></td></tr>';
 }
-
+function deleteVolunteer(key){
+    console.log('Deleting volunteer with key: '+key);
+    doDelete('volunteers/'+key);
+}
 function deleteProject(key){
     console.log('Deleting project with key: '+key);
+    doDelete('projects/'+key);
+}
+function doDelete(ref){
     var onComplete = function(error) {
         if (error) {
             console.log('Delete failed: '+error);
@@ -57,8 +63,8 @@ function deleteProject(key){
             console.log('Delete succeeded');
         }
     };
-    var projectRef = firebase.child('projects/'+key);
-    projectRef.remove(onComplete);
+    var deleteRef = firebase.child(ref);
+    deleteRef.remove(onComplete);
 }
 
 function projects() {
