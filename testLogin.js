@@ -39,26 +39,35 @@ function volunteers() {
 
 function generateVolunteerHTML(volunteer) {
     var volunteerObj = volunteer.val();
-    volunteerTable += '<tr><td>' + volunteerObj.name + '</td><td>' + volunteerObj.email + '</td><td>' + volunteerObj.skills + '</td><td><button onclick="deleteVolunteer(\''+volunteer.key()+'\');">Delete</button></td></tr>';
+    volunteerTable += '<tr><td>' + volunteerObj.name + '</td><td>' + volunteerObj.email + '</td><td>' + volunteerObj.skills + '</td><td><button onclick="deleteVolunteer(\'' + volunteer.key() + '\');">Delete</button></td></tr>';
 }
 
 function generateProjectHTML(project) {
-    console.log('Generating for '+project.key());
+    console.log('Generating for ' + project.key());
     var projectObj = project.val();
-    projectTable += '<tr><td>' + projectObj.organisationName + '</td><td>' + projectObj.organisationType + '</td><td>' + projectObj.vacancyDates + '</td><td>' + projectObj.vacancyName + '</td><td>' + projectObj.vacancyDescription + '</td><td>' + projectObj.vacancyLocations + '</td><td>' + projectObj.vacancySkills + '</td><td><button onclick="deleteProject(\''+project.key()+'\');">Delete</button></td></td></tr>';
+    projectTable += '<tr><td>' + projectObj.organisationName + '</td><td>' + projectObj.organisationType + '</td><td>' + projectObj.vacancyDates + '</td><td>' + projectObj.vacancyName + '</td><td>' + projectObj.vacancyDescription + '</td><td>' + projectObj.vacancyLocations + '</td><td>' + projectObj.vacancySkills + '</td><td><button onclick="deleteProject(\'' + project.key() + '\');">Delete</button></td></td></tr>';
 }
-function deleteVolunteer(key){
-    console.log('Deleting volunteer with key: '+key);
-    doDelete('volunteers/'+key);
+
+function deleteVolunteer(key) {
+    var result = confirm("Want to delete?");
+    if (result) {
+        console.log('Deleting volunteer with key: ' + key);
+        doDelete('volunteers/' + key);
+    }
 }
-function deleteProject(key){
-    console.log('Deleting project with key: '+key);
-    doDelete('projects/'+key);
+
+function deleteProject(key) {
+    var result = confirm("Want to delete?");
+    if (result) {
+        console.log('Deleting project with key: ' + key);
+        doDelete('projects/' + key);
+    }
 }
-function doDelete(ref){
-    var onComplete = function(error) {
+
+function doDelete(ref) {
+    var onComplete = function (error) {
         if (error) {
-            console.log('Delete failed: '+error);
+            console.log('Delete failed: ' + error);
         } else {
             console.log('Delete succeeded');
         }
@@ -106,7 +115,7 @@ function createProject() {
     };
     var projectsRef = firebase.child('projects');
     var newProjectRef = projectsRef.push(newProject);
-    console.log("Saved project with new key: "+newProjectRef.key());
+    console.log("Saved project with new key: " + newProjectRef.key());
     projects();
 }
 
