@@ -167,6 +167,18 @@ h4 {
     text-decoration: none;
 }
 
+.newsflash{
+    /*margin-left: 1%;*/
+    background-color: beige;
+    border-style: groove;
+    border-radius: 5px;
+    border-color: gray;
+    padding: 5 25 5 5px;
+    margin-bottom: 20px;
+    padding: 5 0 10 0px;
+    text-align: center;
+}
+
 /* With thanks to http://www.graemeboy.com/css-buttons */
 .styled-button-9 {
     background: #00A0D1;
