@@ -43,8 +43,22 @@ function generateVolunteerHTML(volunteer) {
 }
 
 function generateProjectHTML(project) {
+    console.log('Generating for '+project.key());
     var projectObj = project.val();
-    projectTable += '<tr><td>' + projectObj.organisationName + '</td><td>' + projectObj.vacancyName + '</td></tr>';
+    projectTable += '<tr><td>' + projectObj.organisationName + '</td><td>' + projectObj.organisationType + '</td><td>' + projectObj.vacancyDates + '</td><td>' + projectObj.vacancyName + '</td><td>' + projectObj.vacancyDescription + '</td><td>' + projectObj.vacancyLocations + '</td><td>' + projectObj.vacancySkills + '</td><td><button onclick="deleteProject(\''+project.key()+'\');">Delete</button></td></td></tr>';
+}
+
+function deleteProject(key){
+    console.log('Deleting project with key: '+key);
+    var onComplete = function(error) {
+        if (error) {
+            console.log('Delete failed: '+error);
+        } else {
+            console.log('Delete succeeded');
+        }
+    };
+    var projectRef = firebase.child('projects/'+key);
+    projectRef.remove(onComplete);
 }
 
 function projects() {
@@ -55,7 +69,7 @@ function projects() {
     var projectsRef = firebase.child('projects');
     projectsRef.on("value", function (snapshot) {
         if (snapshot.hasChildren()) {
-            projectTable = '<table id="projectTable"><thead><tr><th>Organisation</th><th>Vacancy</th></tr></thead><tbody>';
+            projectTable = '<table id="projectTable"><thead><tr><th>Organisation Name</th><th>Organisation Type</th><th>Vacancy Dates</th><th>Vacancy Name</th><th>Vacancy Description</th><th>Vacancy Locations</th><th>Vacancy Skills</th><th></th></th></tr></thead><tbody>';
             snapshot.forEach(generateProjectHTML);
             projectTable += '</tbody></table>';
             // add link for exporting to csv
