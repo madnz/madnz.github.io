@@ -29,8 +29,15 @@ window.onload = function () {
 
 function generateVacancyLI(vacancy) {
     var vacancyObj = vacancy.val(),
-        text = '<div><span>' + vacancyObj.vacancyDates + '</span> in <span>' + vacancyObj.vacancyLocations + '</span><br><span>' + vacancyObj.vacancyName + '</span><br><span>' + vacancyObj.organisationName + '</span> need help with <span>' + vacancyObj.vacancySkills + '</span><br>Details | Apply | Share</div>';
+        text = '<div><span>' + vacancyObj.vacancyDates + '</span> in <span>' + vacancyObj.vacancyLocations + '</span><br><span>' + vacancyObj.vacancyName + '</span><br><span>' + vacancyObj.organisationName + '</span> need help with <span>' + vacancyObj.vacancySkills + '</span><br><a href="#" onclick="showVacancyDetails(\''+vacancy.key()+'\')">Details</a> | <a href="#" onclick="applyForVacancy(\''+vacancy.key()+'\')">Apply</a></div>';
     appendVacancy(text);
+}
+
+function showVacancyDetails(key) {
+    console.log('showing vacancy details for '+key);
+}
+function applyForVacancy(key) {
+    console.log('applying for vacancy '+key);
 }
 
 function apply(e) {
