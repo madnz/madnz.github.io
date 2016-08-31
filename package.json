@@ -5,8 +5,6 @@
     "url": "https://github.com/madnz/MakeADifference.git"
   },
   "dependencies": {
-    "@hoist/node-sdk": "^1.0.2",
-    "sendgrid-web": "0.0.5"
   },
   "license": "MIT"
 }
