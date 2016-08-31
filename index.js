@@ -28,10 +28,26 @@ window.onload = function () {
 }
 
 function generateVacancyLI(vacancy) {
-    var vacancyObj = vacancy.val(),
-        text = '<div><span>' + vacancyObj.vacancyDates + '</span> in <span>' + vacancyObj.vacancyLocations + '</span><br><span>' + vacancyObj.vacancyName + '</span><br><span>' + vacancyObj.organisationName + '</span> need help with <span>' + vacancyObj.vacancySkills + '</span><br><a href="#" onclick="showVacancyDetails(\''+vacancy.key()+'\')">Details</a> | <a href="#" onclick="applyForVacancy(\''+vacancy.key()+'\')">Apply</a></div>';
-    appendVacancy(text);
+	    var vacancyObj = vacancy.val(), text = '<hr><div><p class="location">'
+			+ vacancyObj.vacancyDates
+			+ ' in '
+			+ vacancyObj.vacancyLocations
+			+ '</p><p class="name">'
+			+ vacancyObj.vacancyName
+			+ '</p><p class="details">'
+			+ vacancyObj.organisationName
+			+ ' need help with '
+			+ vacancyObj.vacancySkills
+			+ '</p><p><button id="showDetails" onclick="document.getElementById(\'description'
+			+ vacancy.key()
+			+ '\').classList.toggle(\'closed\');">Details</button> | <a href="#" onclick="applyForVacancy(\''
+			+ vacancy.key()
+			+ '\')">Apply</a></p><p class="description closed" id="description'
+			+ vacancy.key() + '">'
+			+ vacancyObj.vacancyDescription + '</p></div>';
+	appendVacancy(text);
 }
+
 
 function showVacancyDetails(key) {
     console.log('showing vacancy details for '+key);
@@ -79,12 +95,18 @@ function apply(e) {
                 //TODO notify user of form submit failure
             } else {
                 newVolunteerKey = newVolunteer.key();
-                console.log('sending thank you email...');
                 var request = new XMLHttpRequest();
                 request.open('POST', 'https://zaa1vg3a3d.execute-api.us-west-2.amazonaws.com/prod', true);
-                request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-                request.send(application);
-                //window.location = 'thank-you.html?key=' + encodeURI(newVolunteerKey) + '&name=' + encodeURI(application.name);
+                request.setRequestHeader('Content-Type', 'application/json');
+                request.onreadystatechange = function() {
+                    if(request.readyState == 4 && request.status == 200) {
+                        window.location = 'thank-you.html?key=' + encodeURI(newVolunteerKey) + '&name=' + encodeURI(application.name);
+                    } else {
+                        //TODO thank you email failure
+                    }
+
+                }
+                request.send(JSON.stringify(application));
             }
         });
     }

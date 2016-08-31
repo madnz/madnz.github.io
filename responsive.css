@@ -1,0 +1,19 @@
+@media (max-width: 1000px) {
+	.Hero {
+    	display: none;
+	}
+}
+
+.col {
+    width: 100%;
+}
+
+.col p {
+	text-align: justify;
+}
+
+.Social {
+    display:block;
+    padding-left: 0px;
+    width: 180%;
+}

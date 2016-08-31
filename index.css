@@ -92,16 +92,147 @@ h4 {
 }
 
 .Company-name {
-    color: rgb(36, 141, 108);
-    text-align: center;
-    width: 100%;
-    line-height: 120%;
-    font-size: 3em;
-    margin-bottom: 20px;
+	color: #75C9BB;
+	font-family: 'Raleway', sans-serif;
+	font-size: 52px;
+	font-weight: 800;
+	line-height: 72px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
+    line-height: 140%;
 }
 
 #vacancies {
-    list-style: none;
+	list-style: none;
+    margin-top: 40px;
+    margin-right: 80px;
+    margin-bottom: 80px;
+}
+
+#vacancies li {
+	margin-top: 20px;
+}
+
+#vacancies li div p {
+	text-align: center;
+}
+
+#vacancies li div p.location {
+    color: #42393B;
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 22px;
+	font-weight: 500;
+	line-height: 24px;
+	text-align: center;
+}
+
+#vacancies li div p.name {
+    color: #75C9BB;
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 28px;
+	font-weight: 500;
+	letter-spacing: 3px;
+	line-height: 24px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+#vacancies li div p.details {
+    color: #42393B;
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 22px;
+	font-weight: 500;
+	line-height: 24px;
+	text-align: center;
+}
+
+#vacancies li div p.description {
+    color: #42393B;
+	font-family: 'Cormorant Garamond', sans-serif;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 24px;
+	text-align: justify;
+	font-style: italic;
+}
+
+.description {
+	overflow-y: hidden;
+	max-height: 500px; /* approximate max height */
+
+	transition-property: all;
+	transition-duration: 1s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+.description.closed {
+	max-height: 0;
+}
+
+#showDetails {
+	background:none!important;
+    border:none; 
+    padding:0!important;
+    font: inherit;
+    /*border is optional*/
+    cursor: pointer;
+    display: inline;
+    color: #E0792B;	
+    font-size: 22px;
+    font-family: 'Cormorant Garamond';
+	font-style: italic;
+	text-align: center;
+	line-height: 24px;
+	margin-left: 40px;
+	margin-right: 40px;
+	text-decoration: underline;
+}
+
+#showDetails:hover {
+    color: #42393B;
+}
+
+#vacancies li em {
+    color: #42393B;
+	font-family: 'Cormorant Garamond';
+	font-size: 28px;
+	font-weight: 500;
+	line-height: 32px;
+	max-width: 1200px;
+	text-align: center;
+}
+
+#vacancies li div a {
+	display: inline;
+    color: #E0792B;	
+    font-size: 22px;
+    font-family: 'Cormorant Garamond';
+	font-style: italic;
+	text-align: center;
+	line-height: 24px;
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+#vacancies li div a:hover {
+    color: #42393B;
+}
+
+hr {
+   display: block;
+   position: relative;
+   padding: 0;
+   margin: 8px auto;
+   height: 0;
+   width: 100%;
+   max-height: 0;
+   font-size: 1px;
+   line-height: 0;
+   clear: both;
+   border: none;
+   border-top: 1px solid #aaaaaa;
+   border-bottom: 1px solid #ffffff;
 }
 
 .Col-container {
@@ -113,10 +244,10 @@ h4 {
     width: 31%;
     margin-left: 1%;
     margin-right: 1%;
-    min-height: 400px;
     background-position: top;
     background-repeat: no-repeat;
     padding-top: 210px;
+    margin-bottom: 40px;
 }
 
 .col p, h2 {
