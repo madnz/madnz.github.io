@@ -79,7 +79,12 @@ function apply(e) {
                 //TODO notify user of form submit failure
             } else {
                 newVolunteerKey = newVolunteer.key();
-                window.location = 'thank-you.html?key=' + encodeURI(newVolunteerKey) + '&name=' + encodeURI(application.name);
+                console.log('sending thank you email...');
+                var request = new XMLHttpRequest();
+                request.open('POST', 'https://zaa1vg3a3d.execute-api.us-west-2.amazonaws.com/prod', true);
+                request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+                request.send(application);
+                //window.location = 'thank-you.html?key=' + encodeURI(newVolunteerKey) + '&name=' + encodeURI(application.name);
             }
         });
     }

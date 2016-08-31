@@ -1,0 +1,9 @@
+{
+    "name": "madnzSendgridLambda",
+    "version": "0.0.1",
+    "description": "",
+    "main": "send.js",
+    "dependencies":{
+        "sendgrid-web": "0.0.5"
+    }
+}
