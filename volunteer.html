@@ -18,8 +18,12 @@
 
     <p>Please fill in the form below and we will get in touch.</p>
 
+    <p id="vacancyName"></p>
+
     <form class="Apply" id="applyForm">
 
+        <input type="hidden" id="role">
+        <input type="hidden" id="org">
         <p>
             <label for="nameInput">Your name:
                 <input type="text" id="nameInput" name="name" required placeholder="Add your full name"
@@ -53,7 +57,7 @@
 <br>
 
 <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
-<script src="index.js"></script>
+<script src="volunteer.js"></script>
 <script type="text/javascript">
 
     var _gaq = _gaq || [];
